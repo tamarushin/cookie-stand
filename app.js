@@ -63,7 +63,7 @@ var seatacAirport = {
   totalDailySales: 0,
   calcCustsEachHour: function(){
     for(var i = 0; i < hours.length; i++){
-      this.custEachHour.push(random(this.minCust,this.maxCust));//set up a function that will push the min/max customers each hour into my function random.
+      this.custsEachHourcustEachHour.push(random(this.minCust,this.maxCust));//set up a function that will push the min/max customers each hour into my function random.
     }
   },
   calcCookiesEachHour: function(){//create a function that calculates cookiesEachHour
@@ -217,3 +217,22 @@ var alki = {
   }
 };
 alki.render();
+
+var alkiStore = new Store('Alki Store', 2, 16, 4.6);
+var pikeStore = new Store('1st and Pike', 23, 65, 6.3);
+var seatacStore = new Store('Seatac Airport', 3, 24, 1.2);
+var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
+var capitolHill = new Store('Capitol Hill', 20, 38, 2.3)
+
+allStores.push(alkiStore);
+allStores.push(pikeStore);
+allStores.push(seatacStore);
+allStores.push(seattleCenter);
+allStores.push(capitolHill);
+
+for(var i = 0; i < allStores.length; i++){
+  allStores[j].hourlySales();
+  allStores[j].totalDailySales();
+}
+
+console.log(allStores);
