@@ -1,209 +1,8 @@
 'use strict';
-//
-// //create an array of store hours for my loop to filter through to project hourly sales and customers per hour.
-var storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-//
-// var seatacAirport = {
-//   storeName: 'SeaTac Airport',
-//   minCust: 3,
-//   maxCust: 24,
-//   avgPerCust: 1.2,
-//   storeHours: []
-//   cookiesEachHour: [],
-//   totalDailySales: 0,
-//   calcCustsEachHour: function(){
-//     for(var i = 0; i < hours.length; i++);
-//       this.custEachHour.push(random(this.min.custEachHour,this.maxCustEachHour));
-//   }
-// };
-// console.log(seatacAirport);
-//
-// function random(min, max){
-//   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive like the number line Sam did in class. via MDN docs
-//
-// calcCookiesEachHour: function(){
-//   this.calcCustsEachHour();
-//   for(var i = 0; i < hours.length; i++){
-//     var oneHour = Math.ceil(this.custEachHour[i] * this.avgCookiesPerCust);
-//     console.log(oneHour, 'each hour');
-//     this.cookiesEachHour.push(oneHour);
-//     this.totalDailySales += oneHour;
-//     console.log(this.totalDailySales, 'total');
-//     }
-//   }
-// }
-// render: function(){
-//   var ulElement = document.getElementById('SeaTac Airport');
-//   // access the element in the DOM where our stuff will go. then create the stuff we are going to put in the DOM.
-//   console.log(ulElement, 'ulElement');
-// //create an element
-// for var (i = 0; i < hours.length; i++){
-// var liElement = document.createElement();
-// }
-//   //give it content
-//   liElement.textContent = hours[i] + ': ' + this.cookiesEachHour[i] + 'cookies';
-//   //append child to the parent
-//   ulElement.appendChild(liElement);
-//   }
-//   liElement = document.createElement('li');
-//   liElement.textContent = 'Total: ' + this.TotalSales + ' cookies';
-//   ulElement.appendChild(liElement);
-//   }
-// }
-// seatacAirport.render();
-//
-//
-// var seattleCenter = {
-//   storeName: 'Seattle Center',
-//   minCust: 11,
-//   maxCust: 38,
-//   avgPerCust: 3.7,
-//   storeHours:[]
-//   cookiesEachHour: [],
-//   totalDailySales: 0,
-//   calcCustsEachHour: function(){
-//     for(var i = 0; i < hours.length; i++);
-//       this.custEachHour.push(random(this.min.custEachHour,this.maxCustEachHour));
-//     }
-// };
-// console.log(seattleCenter);
-//
-// function random(min, max){
-//   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive like the number line Sam did in class. via MDN docs
-//
-// calcCookiesEachHour: function(){
-//   this.calcCustsEachHour();
-//   for(var i = 0; i < hours.length; i++){
-//     var oneHour = Math.ceil(this.custEachHour[i] * this.avgCookiesPerCust);
-//     console.log(oneHour, 'each hour');
-//     this.cookiesEachHour.push(oneHour);
-//     this.totalDailySales += oneHour;
-//     console.log(this.totalDailySales, 'total');
-//     }
-//   }
-// }
-// render: function(){
-//   var ulElement = document.getElementById('Seattle Center');
-//   // access the element in the DOM where our stuff will go. then create the stuff we are going to put in the DOM.
-//   console.log(ulElement, 'ulElement');
-// //create an element
-// for var (i = 0; i < hours.length; i++){
-// var liElement = document.createElement();
-// }
-//   //give it content
-//   liElement.textContent = hours[i] + ': ' + this.cookiesEachHour[i] + 'cookies';
-//   //append child to the parent
-//   ulElement.appendChild(liElement);
-//   }
-//   liElement = document.createElement('li');
-//   liElement.textContent = 'Total: ' + this.TotalSales + ' cookies';
-//   ulElement.appendChild(liElement);
-//   }
-// }
-// seattleCenter.render();
-//
-//
-//
-// var capitolHill = {
-//   storeName: 'Capitol Hill',
-//   minCust: 20,
-//   maxCust: 38,
-//   avgPerCust: 2.3,
-//   storeHours:[]
-//   cookiesEachHour: [],
-//   totalDailySales: 0,
-//   calcCustsEachHour: function(){
-//     for(var i = 0; i < hours.length; i++);
-//       this.custEachHour.push(random(this.min.custEachHour,this.maxCustEachHour));
-//   }
-// };
-// console.log(capitolHill);
-//
-// function random(min, max){
-//   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive like the number line Sam did in class. via MDN docs
-//
-// calcCookiesEachHour: function(){
-//   this.calcCustsEachHour();
-//   for(var i = 0; i < hours.length; i++){
-//     var oneHour = Math.ceil(this.custEachHour[i] * this.avgCookiesPerCust);
-//     console.log(oneHour, 'each hour');
-//     this.cookiesEachHour.push(oneHour);
-//     this.totalDailySales += oneHour;
-//     console.log(this.totalDailySales, 'total');
-//     }
-//   }
-// }
-// render: function(){
-//   var ulElement = document.getElementById('Capitol Hill');
-//   // access the element in the DOM where our stuff will go. then create the stuff we are going to put in the DOM.
-//   console.log(ulElement, 'ulElement');
-// //create an element
-// for var (i = 0; i < hours.length; i++){
-// var liElement = document.createElement();
-// }
-//   //give it content
-//   liElement.textContent = hours[i] + ': ' + this.cookiesEachHour[i] + 'cookies';
-//   //append child to the parent
-//   ulElement.appendChild(liElement);
-//   }
-//   liElement = document.createElement('li');
-//   liElement.textContent = 'Total: ' + this.TotalSales + ' cookies';
-//   ulElement.appendChild(liElement);
-//   }
-// }
-// capitolHill.render();
-//
-//
-// var alki = {
-//   storeName: 'Alki',
-//   minCust: 2,
-//   maxCust: 16,
-//   avgPerCust: 4.6,
-//   storeHours:[]
-//   cookiesEachHour: [],
-//   totalDailySales: 0,
-//   calcCustsEachHour: function(){
-//     for(var i = 0; i < hours.length; i++);
-//       this.custEachHour.push(random(this.min.custEachHour,this.maxCustEachHour));
-//   }
-// };
-// console.log(alki);
-//
-// function random(min, max){
-//   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive like the number line Sam did in class. via MDN docs
-//
-// calcCookiesEachHour: function(){
-//   this.calcCustsEachHour();
-//   for(var i = 0; i < hours.length; i++){
-//     var oneHour = Math.ceil(this.custEachHour[i] * this.avgCookiesPerCust);
-//     console.log(oneHour, 'each hour');
-//     this.cookiesEachHour.push(oneHour);
-//     this.totalDailySales += oneHour;
-//     console.log(this.totalDailySales, 'total');
-//     }
-//   }
-// }
-// render: function(){
-//   var ulElement = document.getElementById('Alki');
-//   // access the element in the DOM where our stuff will go. then create the stuff we are going to put in the DOM.
-//   console.log(ulElement, 'ulElement');
-// //create an element
-// for var (i = 0; i < hours.length; i++){
-// var liElement = document.createElement();
-// }
-//   //give it content
-//   liElement.textContent = hours[i] + ': ' + this.cookiesEachHour[i] + 'cookies';
-//   //append child to the parent
-//   ulElement.appendChild(liElement);
-//   }
-//   liElement = document.createElement('li');
-//   liElement.textContent = 'Total: ' + this.TotalSales + ' cookies';
-//   ulElement.appendChild(liElement);
-//   }
-// }
-// alki.render();
-//
-/////////////////////////////////////////////////////////////////////
+
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+//create an array of store hours for my loop to filter through to project hourly sales and customers per hour.
+
 function random(min, max){
   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive like the number line Sam did in class. via MDN docs
 }
@@ -218,77 +17,203 @@ var pikeStore = {
   totalDailySales: 0,
   calcCustsEachHour: function(){
     for(var i = 0; i < hours.length; i++){
-      this.custEachHour.push(random(this.min.custEachHour,this.maxCustEachHour));
+      this.custEachHour.push(random(this.minCust,this.maxCust));//set up a function that will push the min/max customers each hour into my function random.
     }
   },
-  calcCookiesEachHour: function(){
-    this.calcCustsEachHour();
-    for(var i = 0; i < hours.length; i++){
-      var oneHour = Math.ceil(this.custEachHour[i] * this.avgCookiesPerCust);
+  calcCookiesEachHour: function(){//create a function that calculates cookiesEachHour
+    this.calcCustsEachHour(); //use 'this' to call the custEachHour if inside the pikeStore container.
+    for(var i = 0; i < hours.length; i++){ //loop thru hours
+      var oneHour = Math.ceil(this.custEachHour[i] * this.avgPerCust);//create a var I named oneHour and set it equal to a math equation that goes through an empty array and multiplies it to 6.3 avg. cookie per customer per hour.
       console.log(oneHour, 'each hour');
       this.cookiesEachHour.push(oneHour);
+      //push my cookies sold each hour into my var oneHour to do the math.
       this.totalDailySales += oneHour;
+      //calculate totalDailySales by adding it to the cookies sold in the next hour.
       console.log(this.totalDailySales, 'total');
     }
   },
   render: function(){
     var listContainer = document.getElementById('pike');
+    //We are going to render an output. create a var listContainer is a container in HTML that will be named the store name. HTML has the ID of store name 'pike' etc.
     var myUl = document.createElement('ul');
+    //create a container for my unordered list
     listContainer.appendChild(myUl);
+    //put myUL into the listContainer
     var firstListItem = document.createElement('li');
-    firstListItem.innerHTML = 'pike place market';
+    //create a container for my lists
+    this.calcCookiesEachHour();
+    //render my math for cookiesEachHour
+    firstListItem.innerHTML = this.cookiesEachHour + ' ' + this.totalDailySales;
+    //render my numbers
     myUl.appendChild(firstListItem);
-    pikeStore.render();
+    //I know this puts my firstListItem into the Ul contsiner, but this one is confusing.
+
   }
 };
-var alkiStore = new Store('Alki Store', 2, 16, 4.6);
-var pikeStore = new Store('1st and Pike', 23, 65, 6.3);
-var seatacStore = new Store('Seatac Airport', 3, 24, 1.2);
-var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
-var capitolHill = new Store('Capitol Hill', 20, 38, 2.3)
-
-allStores.push(alkiStore);
-allStores.push(pikeStore);
-allStores.push(seatacStore);
-allStores.push(seattleCenter);
-allStores.push(capitolHill);
-
-for(var j = 0; j < allStores.length; j++){
- allStores[j].hourlySales();
- allStores[j].totalSalesPerDay();
-}
-
-console.log(allStores)
-
-// var myList = document.createElement('ul');
-//
-// //<ul></ul>
-//
-// var firstListItem = document.createElement('li');
-//
-// //<li></li>
-//
-// firstListItem.innerHTML = 'this is the first list item';
-//
-// //<li>this is the first list item</li>
-//
-//
-// myList.appendChild(firstListItem)
+pikeStore.render();
 
 
-//<ul>
-  //<li>this is the first list item</li>
-//</ul>
-//
-// var listContainer = document.getElementById('pike');
-// var myUl = document.createElement('ul');
-// listContainer.appendChild(myUl);
-// var firstListItem = document.createElement('li');
-// firstListItem.innerHTML = 'pike place market';
-// myUl.appendChild(firstListItem);
+var seatacAirport = {
+  storeName: 'SeaTac Airport',
+  minCust: 3,
+  maxCust: 24,
+  avgPerCust: 1.2,
+  storeHours: [],
+  cookiesEachHour: [],
+  totalDailySales: 0,
+  calcCustsEachHour: function(){
+    for(var i = 0; i < hours.length; i++){
+      this.custEachHour.push(random(this.minCust,this.maxCust));//set up a function that will push the min/max customers each hour into my function random.
+    }
+  },
+  calcCookiesEachHour: function(){//create a function that calculates cookiesEachHour
+    this.calcCustsEachHour(); //use 'this' to call the custEachHour if inside the pikeStore container.
+    for(var i = 0; i < hours.length; i++){ //loop thru hours
+      var oneHour = Math.ceil(this.custEachHour[i] * this.avgPerCust);//create a var I named oneHour and set it equal to a math equation that goes through an empty array and multiplies it to 6.3 avg. cookie per customer per hour.
+      console.log(oneHour, 'each hour');
+      this.cookiesEachHour.push(oneHour);
+      //push my cookies sold each hour into my var oneHour to do the math.
+      this.totalDailySales += oneHour;
+      //calculate totalDailySales by adding it to the cookies sold in the next hour.
+      console.log(this.totalDailySales, 'total');
+    }
+  },
+  render: function(){
+    var listContainer = document.getElementById('seatac');
+    //We are going to render an output. create a var listContainer is a container in HTML that will be named the store name. HTML has the ID of store name 'pike' etc.
+    var myUl = document.createElement('ul');
+    //create a container for my unordered list
+    listContainer.appendChild(myUl);
+    //put myUL into the listContainer
+    var firstListItem = document.createElement('li');
+    //create a container for my lists
+    this.calcCookiesEachHour();
+    //render my math for cookiesEachHour
+    firstListItem.innerHTML = this.cookiesEachHour + ' ' + this.totalDailySales;
+    //render my numbers
+    myUl.appendChild(firstListItem);
+    //I know this puts my firstListItem into the Ul contsiner, but this one is confusing.
 
+  }
+};
+seatacAirport.render();
 
+var seattleCenter = {
+  storeName: 'Seattle Center',
+  minCust: 11,
+  maxCust: 38,
+  avgPerCust: 3.7,
+  storeHours:[],
+  cookiesEachHour: [],
+  totalDailySales: 0,
+  calcCookiesEachHour: function(){//create a function that calculates cookiesEachHour
+    this.calcCustsEachHour(); //use 'this' to call the custEachHour if inside the pikeStore container.
+    for(var i = 0; i < hours.length; i++){ //loop thru hours
+      var oneHour = Math.ceil(this.custEachHour[i] * this.avgPerCust);//create a var I named oneHour and set it equal to a math equation that goes through an empty array and multiplies it to 6.3 avg. cookie per customer per hour.
+      console.log(oneHour, 'each hour');
+      this.cookiesEachHour.push(oneHour);
+      //push my cookies sold each hour into my var oneHour to do the math.
+      this.totalDailySales += oneHour;
+      //calculate totalDailySales by adding it to the cookies sold in the next hour.
+      console.log(this.totalDailySales, 'total');
+    }
+  },
+  render: function(){
+    var listContainer = document.getElementById('sc');
+    //We are going to render an output. create a var listContainer is a container in HTML that will be named the store name. HTML has the ID of store name 'pike' etc.
+    var myUl = document.createElement('ul');
+    //create a container for my unordered list
+    listContainer.appendChild(myUl);
+    //put myUL into the listContainer
+    var firstListItem = document.createElement('li');
+    //create a container for my lists
+    this.calcCookiesEachHour();
+    //render my math for cookiesEachHour
+    firstListItem.innerHTML = this.cookiesEachHour + ' ' + this.totalDailySales;
+    //render my numbers
+    myUl.appendChild(firstListItem);
+    //I know this puts my firstListItem into the Ul contsiner, but this one is confusing.
 
-// var myUl = document.createElement('ul')
-// var myContainer = document.getElementById('lists')
-// myContainer.appendChild(myUl)
+  }
+};
+seattleCenter.render();
+
+var capitolHill = {
+  storeName: 'Capitol Hill',
+  minCust: 20,
+  maxCust: 38,
+  avgPerCust: 2.3,
+  storeHours:[],
+  cookiesEachHour: [],
+  totalDailySales: 0,
+  calcCookiesEachHour: function(){//create a function that calculates cookiesEachHour
+    this.calcCustsEachHour(); //use 'this' to call the custEachHour if inside the pikeStore container.
+    for(var i = 0; i < hours.length; i++){ //loop thru hours
+      var oneHour = Math.ceil(this.custEachHour[i] * this.avgPerCust);//create a var I named oneHour and set it equal to a math equation that goes through an empty array and multiplies it to 6.3 avg. cookie per customer per hour.
+      console.log(oneHour, 'each hour');
+      this.cookiesEachHour.push(oneHour);
+      //push my cookies sold each hour into my var oneHour to do the math.
+      this.totalDailySales += oneHour;
+      //calculate totalDailySales by adding it to the cookies sold in the next hour.
+      console.log(this.totalDailySales, 'total');
+    }
+  },
+  render: function(){
+    var listContainer = document.getElementById('cap-hill');
+    //We are going to render an output. create a var listContainer is a container in HTML that will be named the store name. HTML has the ID of store name 'pike' etc.
+    var myUl = document.createElement('ul');
+    //create a container for my unordered list
+    listContainer.appendChild(myUl);
+    //put myUL into the listContainer
+    var firstListItem = document.createElement('li');
+    //create a container for my lists
+    this.calcCookiesEachHour();
+    //render my math for cookiesEachHour
+    firstListItem.innerHTML = this.cookiesEachHour + ' ' + this.totalDailySales;
+    //render my numbers
+    myUl.appendChild(firstListItem);
+    //I know this puts my firstListItem into the Ul contsiner, but this one is confusing.
+
+  }
+};
+capitolHill.render();
+
+var alki = {
+  storeName: 'Alki',
+  minCust: 2,
+  maxCust: 16,
+  avgPerCust: 4.6,
+  storeHours:[],
+  cookiesEachHour: [],
+  totalDailySales: 0,
+  calcCookiesEachHour: function(){//create a function that calculates cookiesEachHour
+    this.calcCustsEachHour(); //use 'this' to call the custEachHour if inside the pikeStore container.
+    for(var i = 0; i < hours.length; i++){ //loop thru hours
+      var oneHour = Math.ceil(this.custEachHour[i] * this.avgPerCust);//create a var I named oneHour and set it equal to a math equation that goes through an empty array and multiplies it to 6.3 avg. cookie per customer per hour.
+      console.log(oneHour, 'each hour');
+      this.cookiesEachHour.push(oneHour);
+      //push my cookies sold each hour into my var oneHour to do the math.
+      this.totalDailySales += oneHour;
+      //calculate totalDailySales by adding it to the cookies sold in the next hour.
+      console.log(this.totalDailySales, 'total');
+    }
+  },
+  render: function(){
+    var listContainer = document.getElementById('alki');
+    //We are going to render an output. create a var listContainer is a container in HTML that will be named the store name. HTML has the ID of store name 'pike' etc.
+    var myUl = document.createElement('ul');
+    //create a container for my unordered list
+    listContainer.appendChild(myUl);
+    //put myUL into the listContainer
+    var firstListItem = document.createElement('li');
+    //create a container for my lists
+    this.calcCookiesEachHour();
+    //render my math for cookiesEachHour
+    firstListItem.innerHTML = this.cookiesEachHour + ' ' + this.totalDailySales;
+    //render my numbers
+    myUl.appendChild(firstListItem);
+    //I know this puts my firstListItem into the Ul contsiner, but this one is confusing.
+
+  }
+};
+alki.render();
