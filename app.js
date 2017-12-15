@@ -1,7 +1,8 @@
 'use strict';
 
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-//create an array of store hours for my loop to filter through to project hourly sales and customers per hour.
+//create an array of store hours/names for my loop to filter through to project hourly sales and customers per hour.
+var namer = ['1st and Pike', 'Seatac Airport', 'Seattle Center', 'Capitol Hill', 'Alki'];
 
 function random(min, max){
   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive like the number line Sam did in class. via MDN docs
@@ -32,6 +33,7 @@ var pikeStore = {
       console.log(this.totalDailySales, 'total');
     }
   },
+
   render: function(){
     var listContainer = document.getElementById('pike');
     //We are going to render an output. create a var listContainer is a container in HTML that will be named the store name. HTML has the ID of store name 'pike' etc.
@@ -46,7 +48,7 @@ var pikeStore = {
     firstListItem.innerHTML = this.cookiesEachHour + ' ' + this.totalDailySales;
     //render my numbers
     myUl.appendChild(firstListItem);
-    //I know this puts my firstListItem into the Ul contsiner, but this one is confusing.
+    //I know this puts my firstListItem into the Ul container, but this one is confusing.
 
   }
 };
@@ -58,12 +60,12 @@ var seatacAirport = {
   minCust: 3,
   maxCust: 24,
   avgPerCust: 1.2,
-  storeHours: [],
+  custEachHour: [],
   cookiesEachHour: [],
   totalDailySales: 0,
   calcCustsEachHour: function(){
     for(var i = 0; i < hours.length; i++){
-      this.custsEachHourcustEachHour.push(random(this.minCust,this.maxCust));//set up a function that will push the min/max customers each hour into my function random.
+      this.custEachHour.push(random(this.minCust,this.maxCust));//set up a function that will push the min/max customers each hour into my function random.
     }
   },
   calcCookiesEachHour: function(){//create a function that calculates cookiesEachHour
@@ -103,9 +105,14 @@ var seattleCenter = {
   minCust: 11,
   maxCust: 38,
   avgPerCust: 3.7,
-  storeHours:[],
+  custEachHour:[],
   cookiesEachHour: [],
   totalDailySales: 0,
+  calcCustsEachHour: function(){
+    for(var i = 0; i < hours.length; i++){
+      this.custEachHour.push(random(this.minCust,this.maxCust));//set up a function that will push the min/max customers each hour into my function random.
+    }
+  },
   calcCookiesEachHour: function(){//create a function that calculates cookiesEachHour
     this.calcCustsEachHour(); //use 'this' to call the custEachHour if inside the pikeStore container.
     for(var i = 0; i < hours.length; i++){ //loop thru hours
@@ -143,9 +150,14 @@ var capitolHill = {
   minCust: 20,
   maxCust: 38,
   avgPerCust: 2.3,
-  storeHours:[],
+  custEachHour:[],
   cookiesEachHour: [],
   totalDailySales: 0,
+  calcCustsEachHour: function(){
+    for(var i = 0; i < hours.length; i++){
+      this.custEachHour.push(random(this.minCust,this.maxCust));//set up a function that will push the min/max customers each hour into my function random.
+    }
+  },
   calcCookiesEachHour: function(){//create a function that calculates cookiesEachHour
     this.calcCustsEachHour(); //use 'this' to call the custEachHour if inside the pikeStore container.
     for(var i = 0; i < hours.length; i++){ //loop thru hours
@@ -159,7 +171,7 @@ var capitolHill = {
     }
   },
   render: function(){
-    var listContainer = document.getElementById('cap-hill');
+    var listContainer = document.getElementById('caphill');
     //We are going to render an output. create a var listContainer is a container in HTML that will be named the store name. HTML has the ID of store name 'pike' etc.
     var myUl = document.createElement('ul');
     //create a container for my unordered list
@@ -172,7 +184,7 @@ var capitolHill = {
     firstListItem.innerHTML = this.cookiesEachHour + ' ' + this.totalDailySales;
     //render my numbers
     myUl.appendChild(firstListItem);
-    //I know this puts my firstListItem into the Ul contsiner, but this one is confusing.
+    //I know this puts my firstListItem into the Ul container, but this one is confusing.
 
   }
 };
@@ -183,9 +195,14 @@ var alki = {
   minCust: 2,
   maxCust: 16,
   avgPerCust: 4.6,
-  storeHours:[],
+  custEachHour:[],
   cookiesEachHour: [],
   totalDailySales: 0,
+  calcCustsEachHour: function(){
+    for(var i = 0; i < hours.length; i++){
+      this.custEachHour.push(random(this.minCust,this.maxCust));//set up a function that will push the min/max customers each hour into my function random.
+    }
+  },
   calcCookiesEachHour: function(){//create a function that calculates cookiesEachHour
     this.calcCustsEachHour(); //use 'this' to call the custEachHour if inside the pikeStore container.
     for(var i = 0; i < hours.length; i++){ //loop thru hours
@@ -199,7 +216,7 @@ var alki = {
     }
   },
   render: function(){
-    var listContainer = document.getElementById('alki');
+    var listContainer = document.getElementById ('alki');
     //We are going to render an output. create a var listContainer is a container in HTML that will be named the store name. HTML has the ID of store name 'pike' etc.
     var myUl = document.createElement('ul');
     //create a container for my unordered list
@@ -212,27 +229,46 @@ var alki = {
     firstListItem.innerHTML = this.cookiesEachHour + ' ' + this.totalDailySales;
     //render my numbers
     myUl.appendChild(firstListItem);
-    //I know this puts my firstListItem into the Ul contsiner, but this one is confusing.
+    //I know this puts my firstListItem into the Ul container but this one is confusing.
 
   }
 };
 alki.render();
 
-var alkiStore = new Store('Alki Store', 2, 16, 4.6);
-var pikeStore = new Store('1st and Pike', 23, 65, 6.3);
-var seatacStore = new Store('Seatac Airport', 3, 24, 1.2);
-var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
-var capitolHill = new Store('Capitol Hill', 20, 38, 2.3)
-
-allStores.push(alkiStore);
-allStores.push(pikeStore);
-allStores.push(seatacStore);
-allStores.push(seattleCenter);
-allStores.push(capitolHill);
-
-for(var i = 0; i < allStores.length; i++){
-  allStores[j].hourlySales();
-  allStores[j].totalDailySales();
+function appendHours(arr) {
+  var headerRow = document.getElementById('store-name');
+  for (var i = 0; i < arr.length; i++){
+    var hour = document.createElement('td');
+    hour.innerHTML = arr[i];
+    headerRow.appendChild(hour);
+  }
 }
+appendHours(hours);
 
-console.log(allStores);
+function appendNames(arr) {
+  var nameCol = document.getElementById('store-name');
+  for (var j = 0; j < arr.length; j++){
+    var namer = document.createElement('tr');
+    namer.innerHTML = arr[j];
+    nameCol.appendChild(namer);
+  }
+}
+appendNames(namer);
+// var alkiStore = new Store('Alki Store', 2, 16, 4.6);
+// var pikeStore = new Store('1st and Pike', 23, 65, 6.3);
+// var seatacStore = new Store('Seatac Airport', 3, 24, 1.2);
+// var seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
+// var capitolHill = new Store('Capitol Hill', 20, 38, 2.3)
+//
+// allStores.push(alkiStore);
+// allStores.push(pikeStore);
+// allStores.push(seatacStore);
+// allStores.push(seattleCenter);
+// allStores.push(capitolHill);
+//
+// for(var i = 0; i < allStores.length; i++){
+//   allStores[j].hourlySales();
+//   allStores[j].totalDailySales();
+// }
+//
+// console.log(allStores);
