@@ -34,6 +34,9 @@ h5 {
   text-align: left;
   font-size: 24px;
 }
+button {
+  font-size: 14px
+}
 fieldset{
   padding-left: 20px;
 }
