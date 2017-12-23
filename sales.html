@@ -3,44 +3,55 @@
 
   <head>
     <meta charset="utf-8">
-    <title>12/11 Salmon Cookies</title>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
-    <link href://'https://fonts.googleapis.com/css?family=Inconsolata'>
+    <title>10/23 lab by Tama</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata'>
   </head>
   <body>
+    <header>
+      <h1>Pats Salmon Cookie Store</h1>
+    </header id='header'>
 
+    <div>
+      <img src="./chinook.jpg"/>
+    </div id='logo'>
 
-    <header id='header'>
-      <h1>Pat's Salmon Cookie Store</h1>
-    </header>
+    <h2><i>Open up your own Franchise!</i></h2>
+    <h3>See Projected Sales Below</h3>
+    <table>
+      <thead id='storeHours'></thead>
+      <tbody id='allStores'></tbody>
+      <tfooter id='totals'></tfooter>
+    </table>
+    <div>
+      <h2>Merchandise!</h2>
+      <img src="./cutter.jpeg"/>
+      <p><b>Buy this great cookie cutter to make your own Salmon Cookies! <i>Only</i>    $7.98</b></p>
 
-    <div id='logo'>
-      <img src="./salmon.png"/>
-    </div>
-    <table id='store-name'></table>
+      <img src="./frosted-cookie.jpg"/>
+      <p><b>Buy this wonderful Salmon-shaped Cookie!</b></p>
 
-    <div id='shirt'>
       <img src="./shirt.jpg"/>
+      <p><b>Look classy in our scratch-n-sniff t-shirt! <i>Only</i>  $19.95 Buy for everyone on your Christmas lists</b></p>
+
     </div>
 
-    <h2>Pike Place Market</h2>
-    <ul id="pike"></ul>
-
-    <h2>Seatac Airport</h2>
-    <ul id="seatac"></ul>
-
-    <h2>Seattle Center</h2>
-    <ul id="sc"></ul>
-
-    <h2>Capitol Hill</h2>
-    <ul id="caphill"></ul>
-
-    <h2>Alki Beach</h2>
-    <ul id="alki"></ul>
-
-    <table id="store-name"></table>
-
-    <script src="app.js"></script>
-    </body>
-
- </html>
+<html>
+  <body>
+    <form id="theForm">
+      <fieldset>
+          <legend>Please enter your store information:</legend>
+          <label>Store Name:</label>
+          <input type="text" name="store-name-input" required /> <br />
+          <label>Minimum Customer:</label>
+          <input type="text" name="min-cust-input" min="1" required /> <br />
+          <label>Maximum Customer:</label>
+          <input type="text" name="max-cust-input" required /> <br />
+          <label>Average Cookies per Customer:</label>
+          <input type="text" name="avgCookies-input" min="1" required /> <br />
+          <input type="submit" name="newStoreData" value="Submit">
+      </fieldset>
+    </form>
+  </body>
+  <script src="./app.js"></script>
+</html>

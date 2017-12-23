@@ -24,7 +24,7 @@ h1 {
   color: #e91339;
 }
 h2 {
-  text-align: left;
+  text-align: center;
 }
 h3 {
   text-align: center;
@@ -57,9 +57,7 @@ table {
   border-right-style: double;
   border-bottom-style: double;
 }
-#store-name{
 
-}
 td {
   border: solid 1px black;
 }

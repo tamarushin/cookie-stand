@@ -1,10 +1,9 @@
-
 'use strict';
 
 var storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 
-
+//object constructor
 function Store(storeName, minCust, maxCust, avgPerCust){
   this.name = storeName;
   this.minCust = minCust;
@@ -13,11 +12,6 @@ function Store(storeName, minCust, maxCust, avgPerCust){
   this.totalHourlySales = 0;
   this.projectedHourlySales = [];
 };
-
-// for  (var i = 0; i < storeHours.length; i++){
-//    this.totalDailySales = 0
-//    this.projectedHourlySales = []
-// }
 
 Store.prototype.randomCustGenerator = function(){
   var random =  Math.round(Math.random() * (this.maxCust - this.minCust));
@@ -32,7 +26,7 @@ Store.prototype.hourlySales = function(){
   };
   console.log(this);
 };
-
+//created a store prototype function to calculate total sales perday. created a loop to loop through hours array and calculate total sales per day.
 Store.prototype.totalSalesPerDay = function(){
   var total = 0;
   for(var j = 0; j < this.projectedHourlySales.length; j++){
@@ -44,7 +38,7 @@ Store.prototype.totalSalesPerDay = function(){
 };
 var allStores = [];
 
-
+//object constructors
 var alkiStore = new Store('Alki Store', 2, 16, 4.6);
 var pikeStore = new Store('1st and Pike', 23, 65, 6.3);
 var seatacStore = new Store('Seatac Airport', 3, 24, 1.2);
@@ -59,23 +53,20 @@ allStores.push(capitolHill);
 
 console.log('all stores:', allStores);
 
-for(var j = 0; j < allStores.length; j++){
-  allStores[j].hourlySales();
-  allStores[j].totalSalesPerDay();
-};
+// for(var j = 0; j < allStores.length; j++){
+//   allStores[j].hourlySales();
+//   allStores[j].totalSalesPerDay();
+// }
 
 console.log(allStores);
 var tData = '<td></td>';
 function methodId(){
-  var name;
-  var el;
-  var tdData2;
-  var myRow2;
+
 
   console.log(storeHours.length);
   for(var k = 0; k < storeHours.length; k++){
     tData = tData + '<td>' + storeHours[k] + '</td>';
-    console.log(tData);
+    // console.log(tData);
   }
   tData = tData + '<td>' + 'total' + '</td>';
   return tData;
@@ -87,38 +78,47 @@ var myRow = document.createElement('tr');
 myRow.innerHTML = tData;
 el.appendChild(myRow);
 
-for(var row = 0; row < allStores.length; row++){
-
-  hours = allStores[row].projectedHourlySales;
-  console.log(hours);
-  total = allStores[row].totalDailySales;
-  console.log(total);
-  name = allStores[row].name;
-  console.log (name);
-  el = document.getElementById('allStores');
-  tdData2 = '<td>' + name + '</td>';
-  for(var col = 0; col < storeHours.length; col++){
-    tdData2 = tdData2 + '<td>' + hours[col] + '</td>';
+function makeTable(){
+  for(var j = 0; j < allStores.length; j++){
+    allStores[j].hourlySales();
+    allStores[j].totalSalesPerDay();
   }
-  tdData2 = tdData2 + '<td>' + total + '</td>';
-  myRow2 = document.createElement('tr');
+  for(var row = 0; row < allStores.length; row++){
+
+    var hours = allStores[row].projectedHourlySales;
+    console.log('here it is', hours);
+    var total = allStores[row].totalDailySales;
+    console.log(total);
+    var name = allStores[row].name;
+    console.log (name);
+    el = document.getElementById('allStores');
+    tdData2 = '<td>' + name + '</td>';
+    for(var col = 0; col < storeHours.length; col++){
+      tdData2 = tdData2 + '<td>' + hours[col] + '</td>';
+    }
+console.log('where are the numbers', tdData2);
+    tdData2 = tdData2 + '<td>' + total + '</td>';
+    myRow2 = document.createElement('tr');
+    myRow2.innerHTML = tdData2;
+    el.appendChild(myRow2);
+  }
+  console.log('HELLO');
+  var tdData2 = '<td> TOTAL</td>' ;
+  for(col = 0; col < storeHours.length; col++){
+    total = 0;
+    for (row = 0; row < allStores.length; row++){
+      total = total + allStores[row].projectedHourlySales[col];
+    }
+    console.log('total', total);
+    tdData2 = tdData2 + '<td>' + total + '</td>';
+  }
+  tdData2 = tdData2 + '<td>' + ':)' + '</td>';
+  var myRow2 = document.createElement('tr');
   myRow2.innerHTML = tdData2;
+  var el = document.getElementById('allStores');
   el.appendChild(myRow2);
 }
-
-tdData2 = '<td> TOTAL</td>' ;
-for(var col = 0; col < storeHours.length; col++){
-  total = 0;
-  for(var row = 0; row < allStores.length; row++){
-    total = total + allStores[row].projectedHourlySales[col];
-  }
-  tdData2 = tdData2 + '<td>' + total + '</td>';
-}
-tdData2 = tdData2 + '<td>' + ':)' + '</td>';
-myRow2 = document.createElement('tr');
-myRow2.innerHTML = tdData2;
-el.appendChild(myRow2);
-
+makeTable();
 function generateStoreData(event){
   event.preventDefault();
   var theFormItself = event.target;
@@ -126,15 +126,18 @@ function generateStoreData(event){
   var minCustomerInput = theFormItself.elements['min-cust-input'].value;
   var maxCustomerInput = theFormItself.elements['max-cust-input'].value;
   var avgCookiesInput = theFormItself.elements['avgCookies-input'].value;
-
+  console.log('THE FORM', maxCustomerInput, avgCookiesInput);
   var formStore = new Store(storeNameInput, minCustomerInput, maxCustomerInput, avgCookiesInput);
-
-  var footerTds = document.getElementById('footerElement').childNodes;
-  for (var i = 1; i < footerTds.length - 1; i++) {
-    footerTds[i].textContent = cookieHourTotals[i - 1];
-  }
-  footerTds[footerTds.length - 1].textContent = totalSum(cookieHourTotals);
-  form.reset();
+  allStores.push(formStore);
+  console.log('Stores', allStores);
+  document.getElementById('allStores').innerHTML = '';
+  makeTable();
+  // var footerTds = document.getElementById('footerElement').childNodes;
+  // for (var i = 1; i < footerTds.length - 1; i++) {
+  //   footerTds[i].textContent = cookieHourTotals[i - 1];
+  // }
+  // footerTds[footerTds.length - 1].textContent = totalSum(cookieHourTotals);
+  // form.reset();
 };
 var form = document.getElementById('theForm');
 form.addEventListener('submit', generateStoreData);
