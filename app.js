@@ -2,7 +2,6 @@
 
 var storeHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-
 //object constructor
 function Store(storeName, minCust, maxCust, avgPerCust){
   this.name = storeName;
@@ -53,12 +52,6 @@ allStores.push(capitolHill);
 
 console.log('all stores:', allStores);
 
-// for(var j = 0; j < allStores.length; j++){
-//   allStores[j].hourlySales();
-//   allStores[j].totalSalesPerDay();
-// }
-
-console.log(allStores);
 var tData = '<td></td>';
 function methodId(){
 
@@ -96,7 +89,7 @@ function makeTable(){
     for(var col = 0; col < storeHours.length; col++){
       tdData2 = tdData2 + '<td>' + hours[col] + '</td>';
     }
-console.log('where are the numbers', tdData2);
+    console.log('where are the numbers', tdData2);
     tdData2 = tdData2 + '<td>' + total + '</td>';
     myRow2 = document.createElement('tr');
     myRow2.innerHTML = tdData2;
@@ -132,12 +125,7 @@ function generateStoreData(event){
   console.log('Stores', allStores);
   document.getElementById('allStores').innerHTML = '';
   makeTable();
-  // var footerTds = document.getElementById('footerElement').childNodes;
-  // for (var i = 1; i < footerTds.length - 1; i++) {
-  //   footerTds[i].textContent = cookieHourTotals[i - 1];
-  // }
-  // footerTds[footerTds.length - 1].textContent = totalSum(cookieHourTotals);
-  // form.reset();
+
 };
 var form = document.getElementById('theForm');
 form.addEventListener('submit', generateStoreData);
